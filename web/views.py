@@ -10,14 +10,14 @@ from wechatpy.exceptions import (
     InvalidAppIdException,
 )
 
-from app import app
+from web import app
 
 # set token or get from environments
 TOKEN = os.getenv('WECHAT_TOKEN', '123456')
 AES_KEY = os.getenv('WECHAT_AES_KEY', '')
 APPID = os.getenv('WECHAT_APPID', '')
 
-#app = Flask(__name__)
+#web = Flask(__name__)
 
 
 @app.route('/')
