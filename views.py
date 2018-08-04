@@ -2,7 +2,7 @@
 from __future__ import absolute_import, unicode_literals
 import os
 
-from flask import Flask, request, abort, render_template
+from flask import request, abort, render_template
 from wechatpy import parse_message, create_reply
 from wechatpy.utils import check_signature
 from wechatpy.exceptions import (
@@ -10,14 +10,16 @@ from wechatpy.exceptions import (
     InvalidAppIdException,
 )
 
-from web import app
+from flask import Flask
 
 # set token or get from environments
 TOKEN = os.getenv('WECHAT_TOKEN', '123456')
 AES_KEY = os.getenv('WECHAT_AES_KEY', '')
 APPID = os.getenv('WECHAT_APPID', '')
 
-#web = Flask(__name__)
+
+
+app = Flask(__name__)
 
 
 @app.route('/')
